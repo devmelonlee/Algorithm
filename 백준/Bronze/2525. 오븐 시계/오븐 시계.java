@@ -1,14 +1,15 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int hh, mm, time;
-        hh = mm = time = 0;
-        hh = sc.nextInt();
-        mm = sc.nextInt();
-        time = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int hh = Integer.parseInt(st.nextToken());
+        int mm = Integer.parseInt(st.nextToken());
 
+        int time = Integer.parseInt(br.readLine());
         mm += time;
 
         while(mm >= 60){
@@ -18,12 +19,10 @@ public class Main {
         if(hh >= 24){
             hh -= 24;
         }
-        if(mm == 60){
-            hh++;
-            mm = 0;
-        }
-
-        System.out.println(hh + " " + mm);
-        sc.close();
+        bw.write(hh + " " + mm);
+        
+        br.close();
+        bw.flush();
+        bw.close();
     }
 }
