@@ -15,15 +15,15 @@ public class Main {
       arr[i] = Integer.parseInt(st2.nextToken());
     }
 
-    PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
     for (int i = 0; i <= total - n; i++) {
       int tempSum = 0;
       for (int j = 0; j < n;  j++) {
         tempSum += arr[i+j];
       }
-      pq.add(tempSum);
+      pq.add(-1 * tempSum);
     }
 
-    System.out.println(pq.poll());
+    System.out.println(-1 * pq.poll());
   }
 }
