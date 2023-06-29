@@ -15,15 +15,15 @@ public class Main {
       arr[i] = Integer.parseInt(st2.nextToken());
     }
 
-    PriorityQueue<Integer> pq = new PriorityQueue<>();
+    int max = Integer.MIN_VALUE;
     for (int i = 0; i <= total - n; i++) {
       int tempSum = 0;
       for (int j = 0; j < n;  j++) {
         tempSum += arr[i+j];
       }
-      pq.add(-1 * tempSum);
+      max = Math.max(max, tempSum);
     }
 
-    System.out.println(-1 * pq.poll());
+    System.out.println(max);
   }
 }
