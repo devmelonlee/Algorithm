@@ -6,7 +6,7 @@ public class Main {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     String s = br.readLine();
     int n = Integer.parseInt(br.readLine());
-    String ans = "";
+    StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < n; i++) {
       StringTokenizer st = new StringTokenizer(br.readLine());
@@ -20,8 +20,8 @@ public class Main {
           tmp++;
         }
       }
-      ans += tmp + "\n";
+      sb.append(tmp + "\n");
     }
-    System.out.println(ans);
+    System.out.println(sb);
   }
 }
