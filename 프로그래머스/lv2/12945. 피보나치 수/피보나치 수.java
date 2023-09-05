@@ -10,6 +10,6 @@ class Solution {
             a = b;
             b = answer;
         }
-        return   answer;
+        return answer;
     }
 }
